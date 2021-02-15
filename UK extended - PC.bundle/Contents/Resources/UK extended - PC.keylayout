@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 3.4.2.314 on 2020-04-13 at 23:49 (GMT-4)-->
-<!--Last edited by Ukelele version 3.4.2.314 on 2020-10-15 at 17:23 (CEST)-->
+<!--Last edited by Ukelele version 340 on 2021-02-15 at 15:07 (CET)-->
 <keyboard group="126" id="-2941" name="UK extended - PC" maxout="1">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
@@ -47,7 +47,7 @@
             <key code="7" output="x"/>
             <key code="8" output="c"/>
             <key code="9" output="v"/>
-            <key code="10" output="\"/>
+            <key code="10" action="\ 1"/>
             <key code="11" output="b"/>
             <key code="12" output="q"/>
             <key code="13" action="w"/>
@@ -55,7 +55,7 @@
             <key code="15" output="r"/>
             <key code="16" action="y"/>
             <key code="17" output="t"/>
-            <key code="18" output="1"/>
+            <key code="18" action="1"/>
             <key code="19" output="2"/>
             <key code="20" output="3"/>
             <key code="21" output="4"/>
@@ -87,7 +87,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
-            <key code="50" action="`"/>
+            <key code="50" output="\"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="56" output=""/>
@@ -154,7 +154,7 @@
             <key code="7" output="X"/>
             <key code="8" output="C"/>
             <key code="9" output="V"/>
-            <key code="10" output="|"/>
+            <key code="10" output="¬"/>
             <key code="11" output="B"/>
             <key code="12" output="Q"/>
             <key code="13" action="W 1"/>
@@ -194,7 +194,7 @@
             <key code="47" output="&#x003E;"/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
-            <key code="50" output="¬"/>
+            <key code="50" output="|"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="64" output="&#x0010;"/>
@@ -366,7 +366,7 @@
             <key code="7" output="X"/>
             <key code="8" output="C"/>
             <key code="9" output="V"/>
-            <key code="10" output="\"/>
+            <key code="10" output="¬"/>
             <key code="11" output="B"/>
             <key code="12" output="Q"/>
             <key code="13" action="W"/>
@@ -406,7 +406,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
-            <key code="50" action="` 1"/>
+            <key code="50" output="|"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="64" output="&#x0010;"/>
@@ -578,6 +578,7 @@
             <key code="7" output="&#x0018;"/>
             <key code="8" output="&#x0003;"/>
             <key code="9" output="&#x0016;"/>
+            <key code="10" output="`"/>
             <key code="11" output="&#x0002;"/>
             <key code="12" output="&#x0011;"/>
             <key code="13" output="&#x0017;"/>
@@ -617,7 +618,7 @@
             <key code="47" output="."/>
             <key code="48" output="&#x0009;"/>
             <key code="49" output=" "/>
-            <key code="50" output="`"/>
+            <key code="50" output="\"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
             <key code="64" output="&#x0010;"/>
@@ -694,6 +695,9 @@
         </keyMap>
     </keyMapSet>
     <actions>
+        <action id="1">
+            <when state="none" output="1"/>
+        </action>
         <action id="A">
             <when state="none" output="A"/>
             <when state="Dead Key State 0" output="Á"/>
@@ -800,6 +804,16 @@
             <when state="Dead Key State 2" output="Ŷ"/>
             <when state="Dead Key State 3" output="Ÿ"/>
         </action>
+        <action id="\">
+            <when state="none" next="Dead Key State 5"/>
+        </action>
+        <action id="\ 1">
+            <when state="none" next="Dead Key State 1"/>
+            <when state="Dead Key State 1" output="`"/>
+        </action>
+        <action id="\ 2">
+            <when state="none" next="Dead Key State 1"/>
+        </action>
         <action id="^">
             <when state="none" next="Dead Key State 2"/>
         </action>
@@ -807,6 +821,9 @@
             <when state="none" next="Dead Key State 1"/>
         </action>
         <action id="` 1">
+            <when state="none" next="Dead Key State 1"/>
+        </action>
+        <action id="` 2">
             <when state="none" next="Dead Key State 1"/>
         </action>
         <action id="a">
@@ -862,6 +879,9 @@
             <when state="Dead Key State 2" output="ŷ"/>
             <when state="Dead Key State 3" output="ÿ"/>
         </action>
+        <action id="|">
+            <when state="none" next="Dead Key State 1"/>
+        </action>
         <action id="~">
             <when state="none" next="Dead Key State 4"/>
         </action>
@@ -881,5 +901,6 @@
         <when state="Dead Key State 2" output="^"/>
         <when state="Dead Key State 3" output="¨"/>
         <when state="Dead Key State 4" output="˜"/>
+        <when state="Dead Key State 5" output=""/>
     </terminators>
 </keyboard>
